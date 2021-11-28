@@ -43,6 +43,7 @@ class LoginController extends Controller
         return response()->json([
             'success' => true,
             'user' => auth()->user(),
+            'role' => auth()->user()->getRoleNames(),
             'token' => $token,
         ], 200);
     }
