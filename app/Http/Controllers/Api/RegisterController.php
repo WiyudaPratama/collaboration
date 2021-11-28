@@ -38,6 +38,9 @@ class RegisterController extends Controller
 
         // Return Response JSON User Is Created
         if($user) {
+            // Assign Role Management
+            $user->assignRole('user');
+
             return response()->json([
                 'success' => true,
                 'user' => $user,
