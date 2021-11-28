@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->text('alamat')->nullable();
             $table->string('noHp', 13)->nullable();
-            $table->enum('status', ['aktif', 'cuti', 'tidak aktif'])->nullable();
+            $table->enum('status', ['admin','aktif', 'cuti', 'tidak aktif'])->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->softDeletes();

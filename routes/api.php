@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Api\LoginController;
+
+// Admin Controller
+use App\Http\Controllers\Api\Admin\DashboardController;
 use App\Http\Controllers\Api\LogoutController;
 
 /*
@@ -22,4 +25,10 @@ Route::post('/login', LoginController::class)->name('login');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Admin 
+Route::prefix('/admin')
+    ->group(function() {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('adminDashboard');
+    });
 Route::post('/logout', LogoutController::class)->name('logout');

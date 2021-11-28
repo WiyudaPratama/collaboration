@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             'npm' => '18110241',
             'name' => 'Wiyuda Pratama Mahardika',
             'email' => 'wiyudapratama19@gmail.com',
+            'status' => 'admin',
             'password' => bcrypt('wiyuda19'),
         ]);
 
